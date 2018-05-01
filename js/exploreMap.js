@@ -48,7 +48,7 @@
 
         if (map[i][j] === WATER) {
             exploredMap[i][j] = WATER;
-            yield { i, j, map: Object.assign({}, exploredMap) };
+            yield { i, j, map: exploredMap };
         }
         else {
             if (newIsland) {
@@ -58,7 +58,7 @@
             exploredMap[i][j] = ISLAND;
             // не просто признак острова, но и принадлежность к группе островов
             //exploredMap[i][j] = newIsland ? ++exploredMap.islandCount : exploredMap.islandCount;
-            yield { i, j, map: Object.assign({}, exploredMap) };
+            yield { i, j, map: exploredMap };
 
             yield* checkCell(map, exploredMap, i - 1, j, newIsland);
             yield* checkCell(map, exploredMap, i, j + 1, newIsland);

@@ -1,6 +1,5 @@
 (function (root) {
-    var WATER = root.SHRI_ISLANDS.WATER;
-    var ISLAND = root.SHRI_ISLANDS.ISLAND;
+    const exploreMap = root.SHRI_ISLANDS.exploreMap;
 
     /**
      * Бонусное задание.
@@ -8,8 +7,9 @@
      * добавив функционал, который позволит пошагово визуализировать работу данного алгоритма.
      * Сигнатуру функции можно выбрать наиболее удобную для вашей визуализации
      */
-    function visualizeSolution() {
-        // todo: визуализировать работу алгоритма
+    function visualizeSolution(map) {
+        let explorator = exploreMap(map);
+        return () => explorator.next();
     }
 
     root.SHRI_ISLANDS.visualizeSolution = visualizeSolution;
